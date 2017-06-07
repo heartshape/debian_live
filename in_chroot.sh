@@ -13,8 +13,14 @@ apt install --no-install-recommends --yes --force-yes \
 	blackbox xserver-xorg-core xserver-xorg xinit xterm \
 	pciutils usbutils gparted ntfs-3g hfsprogs rsync dosfstools \
 	syslinux partclone nano pv \
-	sshguard
+	sshguard ca-certificates
 apt-get clean
+
+sed -i.bak '/.*China_Internet.*/d' /etc/ca-certificates.conf 
+sed -i.bak '/.*CNNIC.*/d' /etc/ca-certificates.conf 
+sed -i.bak '/.*WoSign.*/d' /etc/ca-certificates.conf 
+
+update-ca-certificates
 
 rm -f snoopy-install.sh &&
 wget -O snoopy-install.sh https://github.com/a2o/snoopy/raw/install/doc/install/bin/snoopy-install.sh &&
