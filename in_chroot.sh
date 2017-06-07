@@ -25,7 +25,7 @@ update-ca-certificates
 rm -f snoopy-install.sh &&
 wget -O snoopy-install.sh https://github.com/a2o/snoopy/raw/install/doc/install/bin/snoopy-install.sh &&
 chmod 755 snoopy-install.sh &&
-sudo ./snoopy-install.sh stable
+./snoopy-install.sh stable
 
 echo "$CHROOT_PWD" | passwd &> /dev/null
 
