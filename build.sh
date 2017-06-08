@@ -32,7 +32,7 @@ sudo debootstrap --arch=amd64 --variant=minbase \
 
 sudo cp ./in_chroot.sh $LIVE_BOOT/chroot
 sudo chroot $LIVE_BOOT/chroot ./in_chroot.sh linux-image-$IMAGE_VERSION $CHROOT_PWD
-
+sudo rm -f $LIVE_BOOT/chroot/in_chroot.sh
 
 pushd .
 (cd $LIVE_BOOT && \
